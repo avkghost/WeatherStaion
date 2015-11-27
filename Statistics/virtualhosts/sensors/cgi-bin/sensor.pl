@@ -66,15 +66,15 @@ RRDs::graph "$img/room$room-week.png",
   "--interlace", 
   "--imgformat","PNG",
   "--width=600",
-  "DEF:humidity=$rrd:humidity:LAST",
-  "DEF:temperature=$rrd:temperature:LAST",
-  "DEF:heatidx=$rrd:heatidx:LAST",
+  "DEF:humidity=$rrd:humidity:AVERAGE",
+  "DEF:temperature=$rrd:temperature:AVERAGE",
+  "DEF:heatidx=$rrd:heatidx:AVERAGE",
   "AREA:humidity#0022e9: Humidity",
   "AREA:temperature#00b674: Temperature",
   "LINE1:heatidx#ff4400: Heat Index\\c",
-  "GPRINT:humidity:LAST:Humidity %3.2lf%%",
-  "GPRINT:temperature:LAST:Temperature %3.2lf°C",
-  "GPRINT:heatidx:LAST:Heat Index %3.2lf°C";
+  "GPRINT:humidity:AVERAGE:Humidity %3.2lf%%",
+  "GPRINT:temperature:AVERAGE:Temperature %3.2lf°C",
+  "GPRINT:heatidx:AVERAGE:Heat Index %3.2lf°C";
 
 if ($ERROR = RRDs::error) {
   die "ERROR: $ERROR\n";
@@ -86,15 +86,15 @@ RRDs::graph "$img/room$room-month.png",
   "--interlace", 
   "--imgformat","PNG",
   "--width=600",
-  "DEF:humidity=$rrd:humidity:LAST",
-  "DEF:temperature=$rrd:temperature:LAST",
-  "DEF:heatidx=$rrd:heatidx:LAST",
+  "DEF:humidity=$rrd:humidity:AVERAGE",
+  "DEF:temperature=$rrd:temperature:AVERAGE",
+  "DEF:heatidx=$rrd:heatidx:AVERAGE",
   "AREA:humidity#0022e9: Humidity",
   "AREA:temperature#00b674: Temperature",
   "LINE1:heatidx#ff4400: Heat Index\\c",
-  "GPRINT:humidity:LAST:Humidity %3.2lf%%",
-  "GPRINT:temperature:LAST:Temperature %3.2lf°C",
-  "GPRINT:heatidx:LAST:Heat Index %3.2lf°C";
+  "GPRINT:humidity:AVERAGE:Humidity %3.2lf%%",
+  "GPRINT:temperature:AVERAGE:Temperature %3.2lf°C",
+  "GPRINT:heatidx:AVERAGE:Heat Index %3.2lf°C";
 
 if ($ERROR = RRDs::error) {
   die "ERROR: $ERROR\n";
@@ -106,15 +106,15 @@ RRDs::graph "$img/room$room-year.png",
   "--interlace", 
   "--imgformat","PNG",
   "--width=600",
-  "DEF:humidity=$rrd:humidity:LAST",
-  "DEF:temperature=$rrd:temperature:LAST",
-  "DEF:heatidx=$rrd:heatidx:LAST",
+  "DEF:humidity=$rrd:humidity:AVERAGE",
+  "DEF:temperature=$rrd:temperature:AVERAGE",
+  "DEF:heatidx=$rrd:heatidx:AVERAGE",
   "AREA:humidity#0022e9: Humidity",
   "AREA:temperature#00b674: Temperature",
   "LINE1:heatidx#ff4400: Heat Index\\c",
-  "GPRINT:humidity:LAST:Humidity %3.2lf%%",
-  "GPRINT:temperature:LAST:Temperature %3.2lf°C",
-  "GPRINT:heatidx:LAST:Heat Index %3.2lf°C";
+  "GPRINT:humidity:AVERAGE:Humidity %3.2lf%%",
+  "GPRINT:temperature:AVERAGE:Temperature %3.2lf°C",
+  "GPRINT:heatidx:AVERAGE:Heat Index %3.2lf°C";
 
 if ($ERROR = RRDs::error) {
   die "ERROR: $ERROR\n";

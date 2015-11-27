@@ -99,7 +99,17 @@ void loop()
 
         if (c == '\n') {
           
-          int CO2Level = mg.readCO2();
+          int CO2Level = analogRead(MGPIN);
+          float alco = 0;
+          //mg.readCO2();
+          CO2Level = map(CO2Level, 0, 1023, 350, 10000); // CO2 mapping
+//          CO2Level = map(CO2Level, 512, 820, 25, 500); // Alco
+
+          if (CO2Level < 0) {
+            CO2Level = 0;
+          } else {
+            alco = CO2Level / 1000.;
+          }
 
           float humidity = dht.readHumidity();
           float temperature = dht.readTemperature();
@@ -138,7 +148,8 @@ void loop()
           }
 
           client.fastrprint(F("Sensor value: "));
-          client.print(CO2Level);
+//          client.print(CO2Level);
+          client.print(alco);
           client.fastrprint(F("ppm\n"));
 
           client.fastrprintln(F("\n"));
